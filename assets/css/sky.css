@@ -108,3 +108,29 @@ body:not([data-theme]) .card .ph--cloud { overflow: visible; border-radius: 0; }
 /* アーチ形の大人クラスは横に広がらないよう幅をそろえる */
 .panel--adult .panel__img.pop-cloud img { width: 82%; margin-inline: auto; }
 @media (max-width: 1023px) { .deco--ring { display: none; } }
+
+/* グローバルメニュー：文字を1.5倍に（14px→21px） */
+@media (min-width: 1024px) {
+  :root { --header-h: 88px; }
+  .header .nav { gap: var(--s32); }
+  .header .nav__list { gap: var(--s8); }
+  .header .nav__list a { font-size: 21px; line-height: 30px; font-weight: 700; }
+  .nav__cta .cta { width: 300px; height: 60px; font-size: 18px; }
+}
+/* SPのメニューも1.5倍に近づける */
+@media (max-width: 1023px) {
+  .nav__list a { height: 72px; font-size: 22px; }
+}
+
+/* 幅が狭いPCでは、ロゴにぶつからないよう少し小さくする */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .header .nav { gap: var(--s24); }
+  .header .nav__list a { font-size: 18px; }
+  .nav__cta .cta { width: 260px; height: 56px; font-size: 16px; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .header .nav { gap: var(--s16); }
+  .header .nav__list { gap: 0; }
+  .header .nav__list a { font-size: 15px; padding-inline: var(--s12); }
+  .nav__cta .cta { width: 220px; height: 52px; font-size: 15px; }
+}
