@@ -1,0 +1,251 @@
+/* =====================================================================
+   アトリエ版（TOP・大人ページ）
+   雲や空のグラデーションはやめて、教室そのものから見た目を決める。
+   - 地：画用紙（生成りの白＋細かい粒）。区切りは破いた紙の縁
+   - 色：絵の具の名前から。ウルトラマリン（メイン）／バーントシェンナ（差し色）／鉛筆の黒
+   - 写真：切り抜かず四角のまま、マスキングテープで壁に留める
+   - 線：鉛筆の細い線と矢印、手書きのメモ
+   - 配置：全部を中央・均等にしない。FV と特徴は左右非対称
+   ===================================================================== */
+:root {
+  --paper: #FAF7F1;
+  --paper-deep: #F2ECE1;
+  --wash: #E9EFF4;
+  --ultramarine: #24489A;
+  --ultramarine-dark: #1B3778;
+  --sienna: #A9532A;
+  --ink: #2B2A28;
+  --graphite: #5C5852;
+  --tape: rgba(226, 214, 184, .82);
+  --font-head: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+  --font-hand: "Yomogi", "Zen Kaku Gothic New", sans-serif;
+  --font-script: "Caveat", cursive;
+  --color-main: var(--ultramarine);
+  --color-main-dark: var(--ultramarine-dark);
+  --color-deep: var(--ink);
+  --color-ink: var(--ink);
+  --color-text-sub: var(--graphite);
+  --color-accent: var(--sienna);
+  --line-hand: var(--graphite);
+  --theme: var(--ultramarine);
+  --theme-pale: var(--wash);
+  --theme-soft: var(--paper-deep);
+  --h2: 26px;
+}
+@media (min-width: 1024px) { :root { --h2: 34px; } }
+
+body { background: var(--paper) url("../img/atelier/grain.png") repeat; color: var(--ink); font-family: var(--font-body); font-weight: 400; letter-spacing: .04em; }
+.header, .crumb-bar { background: var(--paper); }
+.header .nav__list a { background: none; border-radius: 0; }
+.footer { background: var(--ink); }
+
+/* 見出し：明朝。英字は手書きのメモとして小さく添える */
+.sec-head h2, .h2, .h3-sec, .card h3, .tile h3, h2 { color: var(--ink); font-family: var(--font-head); font-weight: 700; letter-spacing: .06em; }
+.label { gap: var(--s8); color: var(--sienna); font-family: var(--font-script); font-weight: 500; font-size: 24px; line-height: 1; letter-spacing: .01em; transform: none; }
+.label::before { width: 32px; height: 0; border: 0; border-top: 1.5px solid currentColor; border-radius: 0; background: none; -webkit-mask: none; mask: none; clip-path: none; }
+.lead { color: var(--graphite); }
+
+/* 地：画用紙と、薄い青の紙を交互に。区切りは破いた縁 */
+body:not([data-theme]) :is(#materials, #teacher, #gallery, #faq) { background: var(--wash); }
+body:not([data-theme]) :is(#classes, #features, #schedule, #trial, #apply) { background: transparent; }
+.msg { background: transparent; }
+.cedge { top: -39px; height: 40px; }
+
+/* ボタン：角を立てた長方形。影の段差はつけない */
+.cta { border-radius: 2px; background: var(--ultramarine); box-shadow: none; letter-spacing: .12em; }
+.cta:hover { background: var(--ultramarine-dark); }
+.choice { border-radius: 2px; }
+
+/* テープで留めた写真 */
+.pin { position: relative; margin: 0; padding: 8px 8px 10px; background: #fff; box-shadow: 0 1px 2px rgba(43, 42, 40, .14), 0 6px 14px -8px rgba(43, 42, 40, .22); }
+.pin img { display: block; width: 100%; height: auto; }
+.pin::before { content: ""; position: absolute; left: 50%; top: -12px; z-index: 2; width: 88px; height: 24px; margin-left: -44px; background: var(--tape); transform: rotate(-3deg); }
+.pin figcaption { margin-top: 6px; color: var(--graphite); font-family: var(--font-hand); font-size: 13px; line-height: 20px; }
+
+/* ===== FV：左にコピー、右に壁 ===== */
+.afv { position: relative; padding: var(--s24) var(--page-x) var(--s64); background: transparent; overflow: hidden; }
+.afv__grid { max-width: 1280px; margin-inline: auto; display: grid; gap: var(--s48); }
+.afv__note { color: var(--sienna); font-family: var(--font-script); font-size: 24px; line-height: 1; }
+.afv__catch { margin-top: var(--s16); font-family: var(--font-head); font-weight: 700; color: var(--ink); }
+.afv__pre { display: block; font-size: 18px; line-height: 1.6; letter-spacing: .12em; }
+.afv__main { display: block; margin-top: var(--s4); font-size: 40px; line-height: 1.3; letter-spacing: .08em; }
+.afv__facts { margin-top: var(--s24); border-top: 1px solid var(--ink); }
+.afv__facts li { display: grid; grid-template-columns: 72px 1fr; padding: var(--s12) 0; border-bottom: 1px solid rgba(43, 42, 40, .25); font-size: 14px; line-height: 24px; }
+.afv__facts span { color: var(--sienna); font-weight: 700; font-size: 12px; letter-spacing: .1em; }
+.afv h1 { margin-top: var(--s24); color: var(--graphite); font-weight: 500; font-size: 12px; line-height: 20px; }
+.afv .hero__lead { margin-top: var(--s8); font-size: 15px; line-height: 30px; }
+.afv .cta { margin-top: var(--s24); }
+.afv__wall { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: var(--s24) var(--s16); padding-top: var(--s12); }
+.afv__wall .pin--a { grid-column: 1 / -1; transform: rotate(-1deg); }
+.afv__wall .pin--b { transform: rotate(1.5deg); }
+.afv__wall .pin--c { transform: rotate(-2deg); align-self: start; }
+.afv__wall .pin--d { display: none; }
+.afv__hand, .afv__arrow { display: none; }
+@media (min-width: 1024px) {
+  .afv { padding: var(--s40) var(--page-x) var(--s96); }
+  .afv__grid { grid-template-columns: 380px 1fr; gap: var(--s64); align-items: start; }
+  .afv__copy { padding-top: var(--s48); }
+  .afv__pre { font-size: 22px; }
+  .afv__main { font-size: 56px; line-height: 1.25; }
+  .afv__wall { display: block; height: 700px; padding: 0; }
+  .afv__wall .pin { position: absolute; }
+  .afv__wall .pin--a { left: 0; top: 24px; width: 64%; }
+  .afv__wall .pin--b { right: 0; top: 0; width: 28%; }
+  .afv__wall .pin--c { left: 10%; top: 452px; width: 36%; }
+  .afv__wall .pin--d { display: block; right: 8%; top: 360px; width: 26%; transform: rotate(2deg); }
+  .afv__hand { display: block; position: absolute; color: var(--graphite); font-family: var(--font-hand); font-size: 18px; line-height: 1; transform: rotate(-4deg); }
+  .afv__hand--1 { left: 49%; top: 500px; }
+  .afv__hand--2 { left: 51%; top: 612px; }
+  .afv__arrow { display: block; position: absolute; width: 96px; height: 48px; overflow: visible; }
+  .afv__arrow path { fill: none; stroke: var(--graphite); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .afv__arrow--1 { left: 47%; top: 438px; transform: scaleY(-1) rotate(-20deg); }
+  .afv__arrow--2 { left: 41%; top: 600px; }
+}
+
+/* ===== 教室について：鉛筆の線で囲んだメモ ===== */
+.msg { padding-top: var(--s40); padding-bottom: var(--s80); }
+.msg__wrap { display: grid; gap: var(--s32); }
+.memo { position: relative; padding: var(--s24); background: #fff; border: 1.5px solid var(--ink); }
+.memo::after { content: ""; position: absolute; inset: 5px -6px -6px 5px; z-index: -1; border: 1px solid rgba(43, 42, 40, .35); }
+.memo p { font-size: 15px; line-height: 30px; }
+.memo p + p { margin-top: var(--s12); }
+.memo__no { color: var(--sienna); font-family: var(--font-script); font-size: 22px !important; line-height: 1 !important; margin-bottom: var(--s8); }
+.msg__photo--1 { width: 82%; justify-self: end; transform: rotate(1.5deg); }
+.msg__photo--2 { width: 56%; transform: rotate(-2deg); }
+@media (min-width: 1024px) {
+  .msg { padding-top: var(--s64); padding-bottom: var(--s128, 128px); }
+  .msg__wrap { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s48) var(--s24); align-items: start; }
+  .memo { padding: var(--s40) var(--s48); }
+  .memo p { font-size: 16px; line-height: 34px; }
+  .memo--a { grid-column: 1 / 7; grid-row: 1; margin-top: var(--s48); }
+  .msg__photo--1 { grid-column: 8 / 13; grid-row: 1; width: auto; }
+  .msg__photo--2 { grid-column: 2 / 5; grid-row: 2; width: auto; margin-top: calc(var(--s48) * -1); }
+  .memo--b { grid-column: 6 / 13; grid-row: 2; }
+}
+
+/* ===== クラス：テープで留めた写真と、索引カードのような札 ===== */
+.panel__img--pin { position: relative; padding: 8px; background: #fff; box-shadow: 0 1px 2px rgba(43, 42, 40, .14); aspect-ratio: 4 / 3; }
+.panel__img--pin img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.panel__img--pin::before { content: ""; position: absolute; left: 50%; top: -12px; z-index: 2; width: 88px; height: 24px; margin-left: -44px; background: var(--tape); transform: rotate(2deg); }
+.panel--kids .panel__img--pin { transform: rotate(-1deg); }
+.panel--adult .panel__img--pin { transform: rotate(1deg); }
+.panel__name { border-radius: 0; background: none; color: var(--ink); box-shadow: none; }
+.panel__name h3 { color: var(--ink); font-family: var(--font-head); }
+.panel__en { color: var(--sienna); font-family: var(--font-script); font-size: 22px; }
+.panel__row span { color: var(--graphite); }
+.panel__body { border-radius: 0; background: none; }
+.panel--kids, .panel--adult { --pale: transparent; }
+
+/* ===== 材料：枠を細く ===== */
+.mat { border: 1px solid rgba(43, 42, 40, .2); border-radius: 2px; background: #fff; }
+.mats__set--make .mat { background: var(--paper); }
+
+/* ===== 特徴：1枚目を大きく、2・3枚目を右に重ねる ===== */
+.card .ph, .card img, .card .ph--ellipse { border-radius: 0; }
+.card .ph { background: #fff; padding: 8px; box-shadow: 0 1px 2px rgba(43, 42, 40, .14); overflow: visible; }
+.card .ph img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.card__no { color: var(--sienna); font-family: var(--font-head); font-weight: 700; font-size: 28px; }
+@media (min-width: 1024px) {
+  #features .cards { grid-template-columns: 7fr 5fr; grid-template-rows: auto auto; gap: var(--s56) var(--s64); }
+  #features .card:first-child { grid-row: 1 / 3; }
+  #features .card:first-child .ph { aspect-ratio: 4 / 3; }
+  #features .card:not(:first-child) { display: grid; grid-template-columns: 200px 1fr; column-gap: var(--s24); align-content: start; }
+  #features .card:not(:first-child) .ph { grid-row: 1 / 5; aspect-ratio: 1; }
+  #features .card:not(:first-child) > :not(.ph) { grid-column: 2; }
+}
+
+/* ループの写真：角を立てる */
+.loop { background: transparent; }
+.loop__track li, .loop__track li:nth-child(3n+2) { border-radius: 0; }
+
+/* ===== 講師 ===== */
+.ph--frame { display: grid; place-items: center; aspect-ratio: 3 / 4; border: 1.5px dashed var(--graphite); background: #fff; color: var(--graphite); font-size: 13px; line-height: 22px; text-align: center; }
+.career li::before { background: var(--sienna); }
+
+/* 講師の壁画：大きさを変えて壁に掛けるように並べる */
+.works__script { color: var(--sienna); font-family: var(--font-script); font-size: 24px; transform: none; }
+.works__list { gap: var(--s24) var(--s16); }
+.works__item img { border: 0; border-radius: 0; aspect-ratio: 4 / 3; }
+.works__item:nth-child(even) img { border-radius: 0; }
+.works__item figure { padding: 8px 8px 10px; background: #fff; box-shadow: 0 1px 2px rgba(43, 42, 40, .14); }
+.works__item figcaption { font-family: var(--font-hand); color: var(--ink); }
+@media (min-width: 1024px) {
+  .works__list { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s32) var(--s24); align-items: end; }
+  .works__item:nth-child(5n+2), .works__item:nth-child(5n+4) { transform: none; }
+  .works__item:nth-child(1) { grid-column: span 5; } .works__item:nth-child(2) { grid-column: span 4; } .works__item:nth-child(3) { grid-column: span 3; }
+  .works__item:nth-child(4) { grid-column: span 3; } .works__item:nth-child(5) { grid-column: span 5; } .works__item:nth-child(6) { grid-column: span 4; }
+  .works__item:nth-child(n+7) { grid-column: span 3; }
+}
+
+/* ===== 教室の様子：大きさの違う写真を3列に ===== */
+.scene { height: auto !important; }
+.scene__list { display: block; columns: 2; column-gap: var(--s16); }
+.scene__item { break-inside: avoid; margin-bottom: var(--s32); }
+.scene__item--1 { width: auto; }
+.scene__item:nth-child(odd) .pin { transform: rotate(-1.2deg); }
+.scene__item:nth-child(even) .pin { transform: rotate(1.4deg); }
+@media (min-width: 1024px) {
+  .scene__list { display: block; columns: 3; column-gap: var(--s48); }
+  .scene__item { position: static; width: auto !important; margin-bottom: var(--s48); }
+  .scene__item--2 { margin-top: var(--s64); }
+}
+
+/* 表・質問・フォーム：角を立て、線は細く */
+.panel-white, .form, .mapbox, .dayline { border: 1px solid rgba(43, 42, 40, .22); border-radius: 2px; background: #fff; }
+.table th { background: var(--paper-deep); }
+.timeline__dot { background: var(--sienna); }
+.step__no, .steps__no { border-color: var(--ink); color: var(--ink); }
+.steps__curve path, .timeline__curve path { stroke: var(--graphite); }
+.faq__q { color: var(--ultramarine); }
+.faq__a { color: var(--sienna); }
+.tag--solid, .tagc { background: var(--paper-deep); color: var(--ink); }
+
+/* ===== 大人ページ ===== */
+[data-theme="adult"] { --theme: var(--ultramarine); --theme-pale: var(--wash); --theme-soft: var(--paper-deep); }
+[data-theme="adult"] .gallery { background: transparent; }
+[data-theme="adult"] .gallery .blob, [data-theme="adult"] .card .blob, [data-theme="adult"] .teacher .blob { display: none; }
+[data-theme="adult"] .gallery .ph { border: 0; border-radius: 0; padding: 8px; background: #fff; box-shadow: 0 1px 2px rgba(43, 42, 40, .14), 0 6px 14px -8px rgba(43, 42, 40, .22); }
+[data-theme="adult"] .gallery .ph img { width: 100%; height: 100%; object-fit: cover; }
+[data-theme="adult"] .gallery .g::before { content: ""; position: absolute; left: 50%; top: -10px; z-index: 3; width: 72px; height: 20px; margin-left: -36px; background: var(--tape); transform: rotate(-3deg); }
+[data-theme="adult"] .gallery .g1 { transform: rotate(-1deg); } [data-theme="adult"] .gallery .g2 { transform: rotate(1.5deg); } [data-theme="adult"] .gallery .g3 { transform: rotate(-2deg); } [data-theme="adult"] .gallery .g5 { transform: rotate(1deg); }
+[data-theme="adult"] .gallery figcaption { color: var(--graphite); font-family: var(--font-hand); font-weight: 400; }
+[data-theme="adult"] .gallery .arc { display: none; }
+[data-theme="adult"] .intro h1 { color: var(--ink); font-family: var(--font-head); }
+[data-theme="adult"] .chip { border: 1px solid var(--ink); border-radius: 2px; background: #fff; }
+[data-theme="adult"] .band { background: var(--wash); }
+[data-theme="adult"] .wave path { fill: var(--wash); }
+[data-theme="adult"] .wave--bottom path { fill: var(--paper); }
+[data-theme="adult"] .panel-white, [data-theme="adult"] .form { border-radius: 2px; }
+[data-theme="adult"] .timeline__dot { background: var(--sienna); }
+[data-theme="adult"] .timeline__time { color: var(--ink); font-family: var(--font-head); font-size: 22px; }
+[data-theme="adult"] #faq { background: var(--wash); }
+[data-theme="adult"] .card .ph--ellipse { border-radius: 0; }
+
+/* 前の版（pop.css）の位置指定を打ち消す */
+.msg__wrap { height: auto !important; }
+.msg__photo { position: relative !important; left: auto !important; right: auto !important; top: auto !important; }
+.afv__main { white-space: nowrap; }
+@media (min-width: 1024px) { .afv__main { font-size: 46px; letter-spacing: .04em; } }
+.panel__name { width: auto !important; margin: var(--s16) 0 0 !important; padding: 0 !important; text-align: left; }
+.panel__row { justify-content: flex-start; }
+.panel:hover .panel__name { transform: none; }
+.panel__body { padding-left: 0; padding-right: 0; }
+.panel__name { height: auto !important; }
+@media (min-width: 1024px) { #features .card:not(:first-child) { grid-template-columns: 150px 1fr; } }
+
+/* 教室の様子：段組みだとテープが次の段にはみ出すので、4列のグリッドにする */
+.scene__list { columns: auto !important; display: grid !important; grid-template-columns: 1fr 1fr; gap: var(--s32) var(--s16); align-items: start; }
+.scene__item { margin: 0 !important; }
+@media (min-width: 1024px) {
+  .scene__list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s48) var(--s40); }
+  .scene__item--1 { grid-column: 1; grid-row: 1 / 3; }
+  .scene__item--2 { grid-column: 2; grid-row: 1; margin-top: var(--s40) !important; }
+  .scene__item--3 { grid-column: 3; grid-row: 1 / 3; margin-top: var(--s80) !important; }
+  .scene__item--4 { grid-column: 2; grid-row: 2; }
+  .scene__item--5 { grid-column: 4; grid-row: 1 / 3; margin-top: var(--s16) !important; }
+}
+[data-theme="adult"] .ph--arch, [data-theme="adult"] .ph--ellipse { border-radius: 0; }
+[data-theme="adult"] .ph--arch { border: 8px solid #fff; box-shadow: 0 1px 2px rgba(43, 42, 40, .14); }
+[data-theme="adult"] .ph--ellipse.ph--empty { border: 1.5px dashed var(--graphite); background: #fff; }
+[data-theme="adult"] .wave { display: none; }

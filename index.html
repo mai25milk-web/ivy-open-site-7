@@ -9,9 +9,10 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Quicksand:wght@500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Yomogi&family=Zen+Old+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css?v=4">
 <link rel="stylesheet" href="assets/css/pop.css?v=2">
+<link rel="stylesheet" href="assets/css/atelier.css">
 <script>
 (function(d){if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('js-motion');try{var n=performance.getEntriesByType('navigation')[0];if(sessionStorage.getItem('ivy-intro')&&!(n&&n.type==='reload'))d.classList.add('intro-done')}catch(e){}setTimeout(function(){if(!window.ivyReady)d.classList.remove('js-motion')},2500)})(document.documentElement);
 </script>
@@ -47,41 +48,45 @@
 </nav>
 
 <main>
-  <section class="pfv" id="top">
-    <img class="sky-cloud sky-cloud--1" src="assets/img/pop/sky-cloud.svg" alt=""><img class="sky-cloud sky-cloud--2" src="assets/img/pop/sky-cloud.svg" alt=""><img class="sky-cloud sky-cloud--3" src="assets/img/pop/sky-cloud.svg" alt="">
-    <div class="pfv__stage">
-      <p class="pfv__script" aria-hidden="true">Painting &amp; Making</p>
-      <p class="hero__catch pfv__catch"><span class="hero__pre">子どもと大人のための</span><span class="hero__main"><span class="pfv__bubble">絵画・造形教室</span></span></p>
-      <svg class="pfv__tags" viewBox="0 0 1200 640" aria-hidden="true"><path id="arcB" d="M250 520 Q600 690 950 520" fill="none"/><text text-anchor="middle"><textPath href="#arcB" startOffset="50%">#油絵　#アクリル　#水彩　#鉛筆　#色鉛筆　#パステル　#粘土　#紙　#木工</textPath></text></svg>
-      <svg class="pfv__line" viewBox="0 0 1200 640" preserveAspectRatio="none" aria-hidden="true"><path d="M96 300 C40 360 60 440 120 470"/><path d="M1104 180 C1170 230 1160 300 1110 330"/><path d="M1020 560 c40 -30 90 -20 110 20 c10 20 -10 40 -30 30 c-20 -10 -10 -40 20 -50"/></svg>
-      <div class="pfv__photo"><img src="assets/img/pop/fv2-main.webp" width="1148" height="668" alt="講師が描いた、森の木々が続く廊下の壁画"></div>
-      <figure class="pfv__s pfv__s1"><img src="assets/img/pop/fv2-s1.webp" width="320" height="260" alt="クレヨンの上を削って描くスクラッチアート"></figure>
-      <figure class="pfv__s pfv__s2"><img src="assets/img/pop/fv2-s2.webp" width="300" height="250" alt="花の模様と象を描いたトートバッグ"></figure>
-      <figure class="pfv__s pfv__s3"><img src="assets/img/pop/fv2-s3.webp" width="300" height="250" alt="くじらが色の粒を吹き上げる作品"></figure>
-      <figure class="pfv__s pfv__s4"><img src="assets/img/pop/fv2-s4.webp" width="280" height="240" alt="小さな扉から猫が出てくるだまし絵の壁画"></figure>
-    </div>
-    <div class="pfv__text">
-      <h1>横浜市旭区中白根の絵画・造形教室 アイビーオープン</h1>
-      <p class="hero__lead">油絵・水彩・パステルから、<br class="sp-only">粘土・紙・木工まで。<br>いろいろな材料で、描いて、<br class="sp-only">つくれる教室です。</p>
-      <p class="pre-cta">まずは体験レッスンから</p>
-      <a class="cta cta--w" href="#apply">体験レッスンを申し込む</a>
+  <section class="pfv afv" id="top">
+    <div class="afv__grid">
+      <div class="afv__copy">
+        <p class="afv__note" aria-hidden="true">Painting &amp; Making, Yokohama</p>
+        <p class="hero__catch afv__catch"><span class="afv__pre">子どもと大人のための</span><span class="afv__main">絵画・造形教室</span></p>
+        <ul class="afv__facts">
+          <li><span>開講日</span>金曜日</li>
+          <li><span>場所</span>横浜市旭区中白根<br>古道カフェ ヱンルゥト</li>
+          <li><span>材料</span>油絵から木工まで9種類</li>
+        </ul>
+        <h1>横浜市旭区中白根の絵画・造形教室 アイビーオープン</h1>
+        <p class="hero__lead">油絵・水彩・パステルから、粘土・紙・木工まで。<br>いろいろな材料で、描いて、つくれる教室です。</p>
+        <a class="cta cta--w" href="#apply">体験レッスンを申し込む</a>
+      </div>
+      <div class="afv__wall">
+        <figure class="pin pin--a"><img src="assets/img/atelier/hero-forest.webp" width="1200" height="860" alt="講師が描いた、森の木々が続く廊下の壁画"></figure>
+        <figure class="pin pin--b"><img src="assets/img/atelier/hero-cat.webp" width="600" height="760" alt="小さな扉から猫が出てくるだまし絵の壁画"></figure>
+        <figure class="pin pin--c"><img src="assets/img/atelier/scratch-43.webp" width="640" height="480" alt="クレヨンの上を削って描くスクラッチアート"></figure>
+        <figure class="pin pin--d"><img src="assets/img/atelier/tote-34.webp" width="600" height="760" alt="花の模様と象を描いたトートバッグ"></figure>
+        <p class="afv__hand afv__hand--1" aria-hidden="true">講師の壁画</p>
+        <svg class="afv__arrow afv__arrow--1" viewBox="0 0 120 60" aria-hidden="true"><path d="M4 8 C30 2 70 10 96 40"/><path d="M84 38 L97 42 L98 28"/></svg>
+        <p class="afv__hand afv__hand--2" aria-hidden="true">教室で</p>
+        <svg class="afv__arrow afv__arrow--2" viewBox="0 0 120 60" aria-hidden="true"><path d="M116 10 C86 4 50 16 26 44"/><path d="M38 44 L24 46 L24 32"/></svg>
+      </div>
     </div>
   </section>
 
   <section class="section msg" aria-label="教室について">
-    <img class="sky-cloud sky-cloud--4" src="assets/img/pop/sky-cloud.svg" alt=""><img class="sky-cloud sky-cloud--5" src="assets/img/pop/sky-cloud.svg" alt="">
     <div class="wrap msg__wrap">
-      <div class="bubble bubble--l reveal reveal--up">
-        <p>アイビーオープンは、古道カフェ ヱンルゥトの中で金曜日に開いている絵画・造形教室です。<br>子どもクラスと大人クラスがあり、どちらも少人数です。</p>
-        <svg class="bubble__tail" viewBox="0 0 40 32" aria-hidden="true"><path d="M2 2 C10 14 22 24 38 30 C26 18 22 10 24 2"/></svg>
+      <div class="memo memo--a reveal reveal--up">
+        <p class="memo__no" aria-hidden="true">About</p>
+        <p>アイビーオープンは、古道カフェ ヱンルゥトの中で金曜日に開いている絵画・造形教室です。子どもクラスと大人クラスがあり、どちらも少人数です。</p>
       </div>
-      <figure class="msg__photo msg__photo--1 reveal reveal--up"><img src="assets/img/class/owl-cloud.webp" width="500" height="420" alt="講師が描いた、魔法使いのフクロウと黒猫の壁画" loading="lazy" decoding="async"></figure>
-      <figure class="msg__photo msg__photo--2 reveal reveal--up"><img src="assets/img/class/light-craft.webp" width="500" height="420" alt="透明なシートに描いた、ライトで映すクラフト" loading="lazy" decoding="async"></figure>
-      <div class="bubble bubble--r reveal reveal--up" style="--d:.12s">
-        <p>みんなで同じ課題をこなす形ではありません。<br>何を描くか、何をつくるかは、一人ずつやりたいことを聞いてから決めます。<br>油絵・水彩などの絵も、粘土・紙・木工の立体も、同じ教室でつくれます。<br>教えるのは、壁画の制作を仕事にしてきた講師です。</p>
-        <svg class="bubble__tail" viewBox="0 0 40 32" aria-hidden="true"><path d="M2 2 C10 14 22 24 38 30 C26 18 22 10 24 2"/></svg>
+      <figure class="pin msg__photo msg__photo--1 reveal reveal--up"><img src="assets/img/works/owl.webp" width="720" height="540" alt="講師が描いた、魔法使いのフクロウと黒猫の壁画"><figcaption>講師の壁画より</figcaption></figure>
+      <figure class="pin msg__photo msg__photo--2 reveal reveal--up"><img src="assets/img/atelier/light-34.webp" width="600" height="760" alt="透明なシートに描いた、ライトで映すクラフト"><figcaption>教室で</figcaption></figure>
+      <div class="memo memo--b reveal reveal--up" style="--d:.12s">
+        <p>みんなで同じ課題をこなす形ではありません。何を描くか、何をつくるかは、一人ずつやりたいことを聞いてから決めます。</p>
+        <p>油絵・水彩などの絵も、粘土・紙・木工の立体も、同じ教室でつくれます。教えるのは、壁画の制作を仕事にしてきた講師です。</p>
       </div>
-      <svg class="msg__line" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true"><path d="M760 120 C900 90 1040 140 1100 230 C1150 310 1080 380 1000 380"/><path d="M420 470 C300 500 180 470 120 400"/></svg>
     </div>
   </section>
 
@@ -95,13 +100,13 @@
       </div>
       <div class="panels">
         <article class="panel panel--kids reveal reveal--up">
-          <div class="panel__img pop-cloud"><img src="assets/img/pop/kids2-cloud.webp" width="660" height="520" alt="絵の具で紙に模様をつけているところ" loading="lazy" decoding="async"></div>
-          <div class="panel__name"><span class="panel__en" aria-hidden="true">Kids class</span><div class="panel__row"><h3>子どもクラス</h3><span>小学1〜6年生</span></div></div>
+          <div class="panel__img panel__img--pin"><img src="assets/img/atelier/color-water-43.webp" width="640" height="480" alt="絵の具で紙に模様をつけているところ" loading="lazy" decoding="async"></div>
+          <div class="panel__name"><span class="panel__en" aria-hidden="true">for Kids</span><div class="panel__row"><h3>子どもクラス</h3><span>小学1〜6年生</span></div></div>
           <div class="panel__body"><a class="choice choice--kids" href="kids/">子どもクラスを詳しく見る</a></div>
         </article>
         <article class="panel panel--adult reveal reveal--up" style="--d:.12s">
-          <div class="panel__img pop-cloud"><img src="assets/img/pop/adult2-cloud.webp" width="660" height="520" alt="立方体と円柱を鉛筆で描いたスケッチのイメージ" loading="lazy" decoding="async"></div>
-          <div class="panel__name"><span class="panel__en" aria-hidden="true">Adult class</span><div class="panel__row"><h3>大人クラス</h3><span>初めての方も</span></div></div>
+          <div class="panel__img panel__img--pin"><img src="assets/img/pencil-sketch.webp" width="1320" height="879" alt="立方体と円柱を鉛筆で描いたスケッチのイメージ" loading="lazy" decoding="async"></div>
+          <div class="panel__name"><span class="panel__en" aria-hidden="true">for Adults</span><div class="panel__row"><h3>大人クラス</h3><span>初めての方も</span></div></div>
           <div class="panel__body"><a class="choice choice--adult" href="adult/">大人クラスを詳しく見る</a></div>
         </article>
       </div>
@@ -109,7 +114,7 @@
   </section>
 
   <section class="section materials-top" id="materials">
-    <img class="cedge" src="assets/img/pop/cloud-edge.svg" alt="">
+    <img class="cedge" src="assets/img/atelier/edge-blue.svg" alt="">
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="label" aria-hidden="true">Materials</p>
@@ -149,7 +154,7 @@
           <a class="tlink" href="adult/#materials">大人クラスで扱える画材</a>
         </article>
         <article class="card">
-          <div class="ph ph--cloud reveal reveal--up"><img src="assets/img/pop/feat3-cloud.webp" width="580" height="420" alt="講師が描いた、夜空の雲の上で犬が眠る壁画" loading="lazy" decoding="async"></div>
+          <div class="ph reveal reveal--up"><img src="assets/img/works/night-sky.webp" width="720" height="540" alt="講師が描いた、夜空の雲の上で犬が眠る壁画" loading="lazy" decoding="async"></div>
           <p class="card__no" aria-hidden="true">03</p>
           <h3>壁画制作を仕事にする講師が教えます</h3>
           <p class="card__text">講師は女子美術大学 日本画専攻卒。壁画の制作を仕事にし、トリックアート美術館の壁画も手がけました。</p>
@@ -162,11 +167,11 @@
   <div class="loop" aria-hidden="true"><ul class="loop__track"><li><img src="assets/img/watercolor-hands.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/clay-materials.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/oil-canvas-easel.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/desk-brushes-clay.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/pencil-sketch.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/wood-board-sculpture.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/still-life.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/art-materials.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/watercolor-hands.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/clay-materials.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/oil-canvas-easel.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/desk-brushes-clay.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/pencil-sketch.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/wood-board-sculpture.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/still-life.webp" alt="" loading="lazy" decoding="async"></li><li><img src="assets/img/art-materials.webp" alt="" loading="lazy" decoding="async"></li></ul></div>
 
   <section class="section teacher teacher--soft" id="teacher">
-    <img class="cedge" src="assets/img/pop/cloud-edge.svg" alt="">
+    <img class="cedge" src="assets/img/atelier/edge-blue.svg" alt="">
     <div class="wrap teacher__grid">
       <div class="teacher__photo">
         
-        <div class="ph ph--cloudempty reveal reveal--up">写真準備中<br>講師</div>
+        <div class="ph ph--frame reveal reveal--up">写真準備中<br>講師</div>
       </div>
       <div class="teacher__body">
         <div class="sec-head sec-head--flush reveal">
@@ -234,7 +239,7 @@
   </section>
 
   <section class="section insta" id="gallery">
-    <img class="cedge" src="assets/img/pop/cloud-edge.svg" alt="">
+    <img class="cedge" src="assets/img/atelier/edge-blue.svg" alt="">
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="label" aria-hidden="true">Gallery</p>
@@ -242,8 +247,7 @@
         <p class="lead">教室のInstagramから、制作のようすと作品をいくつか。<br>ほかの投稿はInstagramでご覧いただけます。</p>
       </div>
       <div class="scene">
-        <svg class="scene__line" viewBox="0 0 1200 760" preserveAspectRatio="none" aria-hidden="true"><path d="M150 210 C260 330 420 300 560 260 S860 120 1010 230 C1100 300 1060 430 940 470 S640 560 520 600 C430 630 330 640 250 600"/></svg>
-        <ul class="scene__list"><li class="scene__item scene__item--1 reveal reveal--up"><img src="assets/img/class/whale.webp" width="500" height="420" alt="くじらが色の粒を吹き上げる作品" loading="lazy" decoding="async"></li><li class="scene__item scene__item--2 reveal reveal--up"><img src="assets/img/class/scratch.webp" width="500" height="420" alt="クレヨンの上を削って描くスクラッチアート" loading="lazy" decoding="async"></li><li class="scene__item scene__item--3 reveal reveal--up"><img src="assets/img/class/tote.webp" width="500" height="420" alt="花の模様と象を描いたトートバッグ" loading="lazy" decoding="async"></li><li class="scene__item scene__item--4 reveal reveal--up"><img src="assets/img/class/color-water.webp" width="500" height="420" alt="絵の具で紙に模様をつけているところ" loading="lazy" decoding="async"></li><li class="scene__item scene__item--5 reveal reveal--up"><img src="assets/img/class/light-craft.webp" width="500" height="420" alt="透明なシートに描いた、ライトで映すクラフト" loading="lazy" decoding="async"></li></ul>
+        <ul class="scene__list"><li class="scene__item scene__item--1 reveal reveal--up"><figure class="pin "><img src="assets/img/atelier/whale-34.webp" width="600" height="760" alt="くじらが色の粒を吹き上げる作品"><figcaption>くじらが色の粒を吹き上げる作品</figcaption></figure></li><li class="scene__item scene__item--2 reveal reveal--up"><figure class="pin "><img src="assets/img/atelier/scratch-43.webp" width="640" height="480" alt="クレヨンの上を削って描くスクラッチアート"><figcaption>クレヨンの上を削って描くスクラッチアート</figcaption></figure></li><li class="scene__item scene__item--3 reveal reveal--up"><figure class="pin "><img src="assets/img/atelier/tote-34.webp" width="600" height="760" alt="花の模様と象を描いたトートバッグ"><figcaption>花の模様と象を描いたトートバッグ</figcaption></figure></li><li class="scene__item scene__item--4 reveal reveal--up"><figure class="pin "><img src="assets/img/atelier/color-water-43.webp" width="640" height="480" alt="絵の具で紙に模様をつけているところ"><figcaption>絵の具で紙に模様をつけているところ</figcaption></figure></li><li class="scene__item scene__item--5 reveal reveal--up"><figure class="pin "><img src="assets/img/atelier/light-34.webp" width="600" height="760" alt="透明なシートに描いた、ライトで映すクラフト"><figcaption>透明なシートに描いた、ライトで映すクラフト</figcaption></figure></li></ul>
       </div>
       <a class="tlink" href="https://www.instagram.com/painting.art.class/" target="_blank" rel="noopener">Instagramで作品をもっと見る（@painting.art.class）<span class="vh">（新しいタブで開きます）</span></a>
     </div>
@@ -284,7 +288,7 @@
   </section>
 
   <section class="section soft" id="faq">
-    <img class="cedge" src="assets/img/pop/cloud-edge.svg" alt="">
+    <img class="cedge" src="assets/img/atelier/edge-blue.svg" alt="">
     
     <div class="wrap split">
       <div class="sec-head reveal">
