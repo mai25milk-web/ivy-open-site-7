@@ -1,0 +1,110 @@
+/* =====================================================================
+   見た目は空色の版（pop.css v2）に戻す。ボタン・メモの枠・配置はアトリエ版のまま
+   （atelier.css の後に読む。大人ページは adult.css の後）
+   ===================================================================== */
+:root {
+  --font-head: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  --font-body: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  --font-hand: "Yomogi", "Zen Maru Gothic", sans-serif;
+  --color-main: #1F6FB2;
+  --color-main-dark: #175A92;
+  --color-deep: #1F5F99;
+  --color-ink: #26384A;
+  --color-text-sub: #4A5E72;
+  --color-accent: #C2541C;
+  --line-hand: #5BA7DA;
+  --theme: #1F6FB2;
+  --theme-pale: #E4F3FC;
+  --theme-soft: #F2F9FE;
+  --ink: #26384A;
+  --graphite: #4A5E72;
+  --sienna: #C2541C;
+}
+body:not([data-theme="kids"]) { background: #fff; color: var(--color-ink); font-family: var(--font-body); font-weight: 500; }
+body:not([data-theme="kids"]) .header, body:not([data-theme="kids"]) .crumb-bar { background: var(--sky-top); }
+.footer { background: var(--color-deep); }
+
+/* 見出し・英字ラベル */
+body:not([data-theme="kids"]) :is(.sec-head h2, .h2, .h3-sec, .card h3, h2) { color: var(--color-deep); font-family: var(--font-head); font-weight: 700; letter-spacing: .08em; }
+body:not([data-theme="kids"]) .label { gap: var(--s4); color: var(--line-hand); font-size: 26px; transform: rotate(-4deg); transform-origin: left center; }
+body:not([data-theme="kids"]) .label::before { width: 28px; height: 14px; border: 0; border-bottom: 2px solid currentColor; border-radius: 0 0 50% 50%; }
+.lead { color: var(--color-ink); }
+
+/* 地：空色のグラデーションと雲 */
+.afv { background: linear-gradient(180deg, var(--sky-top) 0%, #E2F2FC 55%, var(--sky-btm) 100%); }
+.msg { background: linear-gradient(180deg, var(--sky-btm) 0%, #fff 100%); }
+body:not([data-theme]) :is(#materials, #teacher, #gallery, #faq) { background: linear-gradient(180deg, #E9F5FD 0%, #F5FBFF 100%); }
+.cedge { top: -1px; }
+
+/* 写真：雲の形の画像なので、台紙・テープ・傾きは外す */
+.afv__wall .pin, .msg__photo, .scene__item .pin { padding: 0; background: none; box-shadow: none; transform: none !important; }
+.afv__wall .pin::before, .msg__photo::before, .scene__item .pin::before { content: none; }
+.pin figcaption { color: var(--color-text-sub); }
+.panel__img.pop-cloud { aspect-ratio: auto; padding: 0; background: none; box-shadow: none; }
+.panel__img.pop-cloud img { display: block; width: 100%; height: auto; }
+
+/* FV：文字と線を空色の版の色に */
+.afv__note { color: var(--line-hand); }
+.afv__catch { color: var(--color-deep); font-family: var(--font-head); }
+.afv__facts { border-top-color: var(--line-hand); }
+.afv__facts li { border-bottom-color: var(--color-line); }
+.afv__facts span { color: var(--color-accent); }
+.afv h1 { color: var(--color-deep); }
+.afv__hand { color: var(--color-main); }
+.afv__arrow path { stroke: var(--line-hand); }
+
+/* メモ枠の中の英字 */
+.memo__no { color: var(--line-hand); }
+
+/* クラス */
+.panel__name h3 { color: var(--color-deep); font-family: var(--font-head); }
+.panel__en { color: var(--line-hand); }
+
+/* 材料・表・質問・フォーム：空色の線と丸い角 */
+.mat, .panel-white, .form, .mapbox { border: 2px solid var(--color-line); border-radius: 24px; background: #fff; }
+.mats__set--make .mat { background: #FFF1E6; }
+.table th { background: var(--sky); }
+.timeline__dot, .career li::before { background: var(--orange); }
+.step__no, .steps__no { border-color: var(--color-main); color: var(--color-main); }
+.steps__curve path, .timeline__curve path { stroke: var(--color-main); }
+.faq__q { color: var(--color-main); }
+.faq__a { color: var(--color-accent); }
+.tag--solid, .tagc { background: var(--sky); color: var(--color-deep); }
+
+/* 特徴：写真の角を丸く */
+body:not([data-theme]) .card .ph { padding: 0; background: none; box-shadow: none; overflow: hidden; border-radius: 32px; }
+body:not([data-theme]) .card .ph--cloud { overflow: visible; border-radius: 0; }
+.card__no { color: var(--color-accent); font-family: var(--font-head); }
+
+/* 講師の写真枠・壁画 */
+.ph--cloudempty { display: grid; place-items: center; aspect-ratio: 3 / 4; border: 2px dashed var(--line-hand); border-radius: 46% 54% 50% 50% / 44% 46% 54% 56%; background: #fff; color: var(--color-text-sub); font-size: 13px; line-height: 22px; text-align: center; }
+.works__script { color: var(--line-hand); font-size: 28px; transform: rotate(-4deg); }
+.works__item figure { padding: 0; background: none; box-shadow: none; }
+.works__item img { border: 4px solid #fff; border-radius: 24px 32px 28px 20px; }
+.works__item:nth-child(even) img { border-radius: 32px 20px 24px 30px; }
+.works__item figcaption { font-family: var(--font-body); color: var(--color-ink); }
+.loop__track li { border-radius: 32px; }
+.loop__track li:nth-child(3n+2) { border-radius: 50%; }
+
+/* 大人ページのボタンも、アトリエ版の角を立てた長方形にそろえる */
+[data-theme="adult"] .cta { border-radius: 2px; background: #24489A; box-shadow: none; letter-spacing: .12em; }
+[data-theme="adult"] .cta:hover { background: #1B3778; }
+[data-theme="adult"] .choice { border-radius: 2px; }
+
+/* 雲以外の飾り（点の輪・波線・水玉・半円・アーチの線） */
+.deco { position: absolute; z-index: 1; height: auto; pointer-events: none; }
+.deco--ring { left: 29%; top: 30px; width: 72px; }
+.deco--squiggle { right: 4%; bottom: 48px; width: 120px; }
+.deco--disc { left: 34%; bottom: 72px; width: 56px; }
+.deco--dots { left: 3%; top: 36px; width: 72px; }
+.deco--half { right: 3%; bottom: 40px; width: 110px; }
+.deco--arch { right: 6%; top: 64px; width: 64px; }
+.deco--ring2 { left: 46%; top: 48px; width: 64px; }
+.deco--squiggle2 { right: 5%; top: 120px; width: 110px; }
+@media (max-width: 1023px) {
+  .deco--ring { width: 56px; top: 200px; } .deco--disc, .deco--half, .deco--ring2 { display: none; }
+  .deco--squiggle, .deco--squiggle2 { width: 72px; } .deco--dots { width: 48px; top: 8px; } .deco--arch { width: 40px; top: 24px; }
+}
+/* アーチ形の大人クラスは横に広がらないよう幅をそろえる */
+.panel--adult .panel__img.pop-cloud img { width: 82%; margin-inline: auto; }
+@media (max-width: 1023px) { .deco--ring { display: none; } }
