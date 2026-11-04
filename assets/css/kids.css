@@ -1,0 +1,71 @@
+/* 子どもページ：思いきり子どもっぽく。色数多め・太い丸文字・イラスト・虹と星 */
+[data-theme="kids"] {
+  --theme: #F07A2A; --theme-pale: #FFEFC2; --theme-soft: #FFF8E4;
+  --k-orange: #F07A2A; --k-yellow: #FFC23C; --k-pink: #F2709A; --k-green: #4DB86A; --k-blue: #3BA6E0; --k-purple: #9A72D6;
+  --font-head: "Mochiy Pop One", "Zen Maru Gothic", sans-serif;
+  --color-deep: #E2601A;
+  --line-hand: #F07A2A;
+}
+[data-theme="kids"] body, body[data-theme="kids"] { background: #FFFDF6; color: #4A3A2A; }
+[data-theme="kids"] .header, [data-theme="kids"] .crumb-bar { background: #FFF3CF; }
+
+/* 見出し：ポップ体で大きく */
+[data-theme="kids"] .sec-head h2, [data-theme="kids"] .h3-sec, [data-theme="kids"] .card h3 { font-family: var(--font-head); font-weight: 400; color: #4A3A2A; letter-spacing: .06em; }
+[data-theme="kids"] .sec-head h2 { font-size: 30px; line-height: 1.5; }
+@media (min-width: 1024px) { [data-theme="kids"] .sec-head h2 { font-size: 42px; } }
+[data-theme="kids"] .label { color: var(--k-pink); font-size: 30px; font-weight: 600; transform: rotate(-6deg); }
+[data-theme="kids"] .label::before { width: 24px; height: 24px; border: 0; border-radius: 0; background: var(--k-yellow); clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+
+/* ギャラリー（ページの頭）：黄色の地に、色ちがいの太い枠の写真 */
+[data-theme="kids"] .gallery { background: linear-gradient(180deg, #FFE9A8 0%, #FFF3CF 100%); }
+[data-theme="kids"] .gallery .blob { fill: #FFD36B; }
+[data-theme="kids"] .gallery .ph { border: 6px solid #fff; border-radius: 40px; box-shadow: 0 0 0 4px var(--c, var(--k-orange)); }
+[data-theme="kids"] .g1 { --c: var(--k-blue); } [data-theme="kids"] .g2 { --c: var(--k-pink); } [data-theme="kids"] .g3 { --c: var(--k-green); } [data-theme="kids"] .g4 { --c: var(--k-purple); } [data-theme="kids"] .g5 { --c: var(--k-orange); }
+[data-theme="kids"] .gallery figcaption { display: inline-block; padding: 4px 14px; border-radius: 999px; background: var(--c, var(--k-orange)); color: #fff; font-family: var(--font-head); font-size: 14px; }
+[data-theme="kids"] .gallery .arc path { fill: #FFFDF6; }
+
+/* h1：1文字ずつ色を変える */
+[data-theme="kids"] .intro h1 { font-family: var(--font-head); font-weight: 400; }
+[data-theme="kids"] .intro__2 { font-size: 48px; line-height: 1.3; letter-spacing: .04em; }
+@media (min-width: 1024px) { [data-theme="kids"] .intro__2 { font-size: 72px; } }
+.k1 { color: var(--k-orange); } .k2 { color: var(--k-pink); } .k3 { color: var(--k-yellow); } .k4 { color: var(--k-green); } .k5 { color: var(--k-blue); } .k6 { color: var(--k-purple); }
+[data-theme="kids"] .intro__1, [data-theme="kids"] .intro__3 { color: #6A5236; }
+[data-theme="kids"] .intro__lead { font-size: 16px; line-height: 32px; }
+[data-theme="kids"] .chip { border: 3px solid var(--k-yellow); background: #fff; font-weight: 700; }
+[data-theme="kids"] .chips li:nth-child(2) .chip { border-color: var(--k-pink); }
+[data-theme="kids"] .chips li:nth-child(3) .chip { border-color: var(--k-green); }
+[data-theme="kids"] .chips li:nth-child(4) .chip { border-color: var(--k-blue); }
+[data-theme="kids"] .chips li:nth-child(5) .chip { border-color: var(--k-purple); }
+
+/* ボタン：オレンジのぷっくり */
+[data-theme="kids"] .cta { background: var(--k-orange); box-shadow: 0 5px 0 #B9500E; border-radius: 999px; font-family: var(--font-head); font-weight: 400; letter-spacing: .08em; }
+[data-theme="kids"] .cta:hover { background: #DD6A1C; }
+
+/* カード：色ちがいの太い枠 */
+[data-theme="kids"] .card .ph { border: 5px solid #fff; box-shadow: 0 0 0 4px var(--c, var(--k-orange)); }
+[data-theme="kids"] .card:nth-child(1) { --c: var(--k-pink); } [data-theme="kids"] .card:nth-child(2) { --c: var(--k-green); } [data-theme="kids"] .card:nth-child(3) { --c: var(--k-blue); }
+[data-theme="kids"] .card__no { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--c); color: #fff; font-family: var(--font-head); font-size: 18px; }
+[data-theme="kids"] .card .blob { fill: #FFEFC2; }
+[data-theme="kids"] .mat { border: 3px solid var(--k-yellow); border-radius: 28px; background: #fff; }
+[data-theme="kids"] .mats__set--make .mat { border-color: var(--k-pink); background: #FFF0F4; }
+[data-theme="kids"] .mats--boxed { border: 3px dashed var(--k-yellow); border-radius: 32px; }
+
+/* 流れ：黄色の帯と、色の丸 */
+[data-theme="kids"] .band { background: #FFEFC2; }
+[data-theme="kids"] .timeline__dot { width: 22px; height: 22px; background: var(--k-pink); box-shadow: 0 0 0 4px #fff; }
+[data-theme="kids"] .timeline li:nth-child(3) .timeline__dot { background: var(--k-green); }
+[data-theme="kids"] .timeline li:nth-child(4) .timeline__dot { background: var(--k-blue); }
+[data-theme="kids"] .timeline li:nth-child(5) .timeline__dot { background: var(--k-purple); }
+[data-theme="kids"] .timeline__time { color: var(--k-orange); font-family: var(--font-head); }
+[data-theme="kids"] .steps__curve path, [data-theme="kids"] .timeline__curve path { stroke: var(--k-orange); stroke-width: 3; stroke-dasharray: .012 .012; }
+[data-theme="kids"] .step__no, [data-theme="kids"] .steps__no { border-width: 3px; border-color: var(--k-orange); color: var(--k-orange); font-family: var(--font-head); }
+
+/* 表・よくある質問・フォーム */
+[data-theme="kids"] .panel-white, [data-theme="kids"] .form, [data-theme="kids"] .table-wrap { border: 3px solid var(--k-yellow); border-radius: 32px; }
+[data-theme="kids"] .table th { background: #FFF3CF; }
+[data-theme="kids"] .faq__q { color: var(--k-blue); font-family: var(--font-head); }
+[data-theme="kids"] .faq__a { color: var(--k-pink); font-family: var(--font-head); }
+[data-theme="kids"] #faq { background: linear-gradient(180deg, #FFF0F4 0%, #FFFDF6 100%); }
+[data-theme="kids"] .cedge { display: none; }
+[data-theme="kids"] .footer { background: #E2601A; }
+[data-theme="kids"] .label::before { clip-path: none; background: url("../img/pop/d-star.webp") center / contain no-repeat; }

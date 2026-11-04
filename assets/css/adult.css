@@ -1,0 +1,17 @@
+/* 大人ページ：TOP と同じ空色のトーン。写真は手描き風の角丸と白い縁 */
+[data-theme="adult"] { --theme: var(--color-main); --theme-pale: #E4F3FC; --theme-soft: #F2F9FE; }
+[data-theme="adult"] .gallery { background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-btm) 100%); }
+[data-theme="adult"] .gallery .blob { fill: #fff; opacity: .9; }
+[data-theme="adult"] .gallery .ph { border: 6px solid #fff; border-radius: 48px 64px 56px 40px; }
+[data-theme="adult"] .gallery .g2 .ph, [data-theme="adult"] .gallery .g4 .ph { border-radius: 60px 40px 52px 64px; }
+[data-theme="adult"] .gallery figcaption { color: var(--color-deep); font-weight: 700; }
+[data-theme="adult"] .intro h1 { color: var(--color-deep); }
+[data-theme="adult"] .intro__2 { letter-spacing: .1em; }
+[data-theme="adult"] .chip { border: 2px solid var(--line-hand); border-radius: 22px 26px 24px 20px; background: #fff; }
+[data-theme="adult"] .band { background: #E4F3FC; }
+[data-theme="adult"] .card .blob, [data-theme="adult"] .teacher .blob { fill: #E4F3FC; }
+[data-theme="adult"] .panel-white, [data-theme="adult"] .form { border: 2px solid var(--line-hand); border-radius: 32px 40px 36px 28px; }
+[data-theme="adult"] .timeline__dot { background: var(--line-hand); }
+[data-theme="adult"] .timeline__time { color: var(--color-deep); font-family: var(--font-script); font-size: 26px; }
+[data-theme="adult"] #faq { background: linear-gradient(180deg, #E9F5FD 0%, #F5FBFF 100%); }
+[data-theme="adult"] .cedge { display: none; }

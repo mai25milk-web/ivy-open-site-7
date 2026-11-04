@@ -31,12 +31,12 @@ h2, .h3-sec, .card h3, .tile h3 { color: var(--color-deep); font-weight: 700; }
 .label::before { width: 16px; height: 16px; border-radius: 50%; background: var(--orange); }
 
 /* セクションの地：空色と白を交互に */
-#materials, #teacher, #gallery, #faq { background: var(--sky); }
-#classes, #features, #schedule, #trial, #apply { background: #fff; }
+body:not([data-theme]) :is(#materials, #teacher, #gallery, #faq) { background: var(--sky); }
+body:not([data-theme]) :is(#classes, #features, #schedule, #trial, #apply) { background: #fff; }
 .band { background: #fff; padding-top: var(--s96); padding-bottom: var(--s96); }
 .soft { padding-bottom: var(--s96); }
 .apply { padding-top: var(--s96); }
-#materials, #teacher, #gallery, #faq { padding-top: var(--s96); }
+body:not([data-theme]) :is(#materials, #teacher, #gallery, #faq) { padding-top: var(--s96); }
 .cedge { position: absolute; left: 0; top: -1px; width: 100%; height: 40px; pointer-events: none; z-index: 1; }
 .section > .wrap { position: relative; z-index: 2; }
 
@@ -123,3 +123,156 @@ h2, .h3-sec, .card h3, .tile h3 { color: var(--color-deep); font-weight: 700; }
 
 /* フッター */
 .footer { background: var(--color-deep); }
+
+/* =====================================================================
+   大人寄りの調整（v2）
+   空色のグラデーション・雲・雲の形の実写真・手描きの細い線・筆記体の英字ラベル・吹き出し
+   ===================================================================== */
+:root {
+  --font-script: "Caveat", "Quicksand", cursive;
+  --sky-top: #CFEAFB;
+  --sky-btm: #F3FAFE;
+  --line-hand: #5BA7DA;
+  --h2: 26px;
+}
+@media (min-width: 1024px) { :root { --h2: 32px; } }
+body { font-weight: 500; letter-spacing: .04em; }
+
+/* 英字ラベル：筆記体＋小さな手描きの曲線 */
+.label { gap: var(--s4); color: var(--line-hand); font-family: var(--font-script); font-weight: 500; font-size: 26px; line-height: 1; letter-spacing: .02em; text-transform: none; transform: rotate(-4deg); transform-origin: left center; }
+.label::before { width: 28px; height: 14px; border-radius: 0; background: none; border-bottom: 2px solid currentColor; border-radius: 0 0 50% 50%; -webkit-mask: none; mask: none; }
+.sec-head h2, .h2 { font-weight: 700; letter-spacing: .08em; }
+.lead { font-size: 15px; line-height: 30px; }
+
+/* 地：空色のグラデーションと白を交互に */
+.header, .crumb-bar { background: var(--sky-top); }
+.pfv, .msg { background: linear-gradient(180deg, var(--sky-top) 0%, #E2F2FC 55%, var(--sky-btm) 100%); }
+.msg { background: linear-gradient(180deg, var(--sky-btm) 0%, #fff 100%); }
+body:not([data-theme]) :is(#materials, #teacher, #gallery, #faq) { background: linear-gradient(180deg, #E9F5FD 0%, #F5FBFF 100%); }
+
+/* 白い雲 */
+.sky-cloud { position: absolute; z-index: 1; height: auto; pointer-events: none; }
+.sky-cloud--1 { left: -24px; top: 120px; width: 120px; }
+.sky-cloud--2 { right: -20px; top: 40px; width: 150px; opacity: .9; }
+.sky-cloud--3 { right: 8%; bottom: 40px; width: 90px; }
+.sky-cloud--4 { left: 4%; top: 40px; width: 110px; }
+.sky-cloud--5 { right: 6%; bottom: 80px; width: 140px; }
+@media (max-width: 1023px) { .sky-cloud--1 { width: 72px; top: 260px; } .sky-cloud--2 { width: 90px; } .sky-cloud--3, .sky-cloud--5 { width: 70px; } .sky-cloud--4 { width: 64px; top: 8px; } }
+
+/* FV：雲の写真を中心に、小さな雲の写真を4つ。細い手描きの線と筆記体 */
+.pfv { padding-bottom: var(--s64); }
+.pfv__script { position: relative; z-index: 3; margin-bottom: var(--s4); color: var(--line-hand); font-family: var(--font-script); font-size: 26px; line-height: 1; text-align: center; transform: rotate(-3deg); }
+.pfv .hero__pre { color: var(--color-deep); font-size: 18px; letter-spacing: .14em; }
+.pfv__bubble { font-size: 30px; line-height: 44px; letter-spacing: .14em; box-shadow: none; border: 2px solid var(--line-hand); border-radius: 40px 56px 44px 52px; }
+.pfv__photo { max-width: 100%; margin-top: calc(var(--s16) * -1); }
+.pfv__s { position: absolute; z-index: 2; margin: 0; }
+.pfv__s img { display: block; width: 100%; height: auto; }
+.pfv__s1 { left: -8px; top: 300px; width: 104px; }
+.pfv__s2 { right: -8px; top: 300px; width: 96px; }
+.pfv__s3, .pfv__s4 { display: none; }
+.pfv__line { display: none; }
+.pfv h1 { color: var(--color-deep); }
+.pfv .hero__lead { color: var(--color-ink); }
+.pfv .pre-cta { color: var(--color-deep); }
+@media (min-width: 1024px) {
+  .pfv { padding-bottom: var(--s96); }
+  .pfv__stage { height: 700px; }
+  .pfv__script { position: absolute; left: 50%; top: 0; margin: 0; font-size: 34px; transform: translateX(-50%) rotate(-3deg); }
+  .pfv__catch { padding-top: var(--s40); }
+  .pfv .hero__pre { font-size: 28px; line-height: 40px; }
+  .pfv__bubble { padding: var(--s8) var(--s40) var(--s12); font-size: 44px; line-height: 64px; }
+  .pfv__photo { width: 760px; max-width: none; margin: calc(var(--s24) * -1) auto 0; }
+  .pfv__tags { top: 40px; }
+  .pfv__tags text { fill: var(--color-deep); font-weight: 500; font-size: 16px; }
+  .pfv__line { display: block; position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; overflow: visible; }
+  .pfv__line path, .msg__line path, .scene__line path { fill: none; stroke: var(--line-hand); stroke-width: 2; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+  .pfv__s3, .pfv__s4 { display: block; }
+  .pfv__s1 { left: 0; top: 120px; width: 220px; }
+  .pfv__s2 { left: 24px; top: 470px; width: 200px; }
+  .pfv__s3 { right: 0; top: 110px; width: 210px; }
+  .pfv__s4 { right: 30px; top: 400px; width: 190px; }
+  .pfv__text { margin-top: var(--s16); }
+}
+
+/* 吹き出し：手描き風のゆがんだ角丸と細い線 */
+.msg { padding-top: var(--s64); padding-bottom: var(--s80); }
+.msg__wrap { position: relative; display: grid; gap: var(--s32); }
+.bubble { position: relative; z-index: 2; padding: var(--s24) var(--s24); border: 2px solid var(--line-hand); border-radius: 36px 48px 40px 30px; background: #fff; }
+.bubble p { font-size: 15px; line-height: 30px; letter-spacing: .06em; }
+.bubble__tail { position: absolute; left: 48px; bottom: -28px; width: 40px; height: 32px; overflow: visible; }
+.bubble__tail path { fill: #fff; stroke: var(--line-hand); stroke-width: 2; stroke-linejoin: round; }
+.bubble--r .bubble__tail { left: auto; right: 56px; transform: scaleX(-1); }
+.msg__photo { position: relative; z-index: 2; margin: 0; width: 72%; }
+.msg__photo img { display: block; width: 100%; height: auto; }
+.msg__photo--2 { justify-self: end; width: 60%; margin-top: calc(var(--s48) * -1); }
+.msg__line { display: none; }
+@media (min-width: 1024px) {
+  .msg { padding-top: var(--s96); padding-bottom: var(--s120, 120px); }
+  .msg__wrap { display: block; height: 600px; }
+  .bubble { position: absolute; padding: var(--s40) var(--s48); }
+  .bubble p { font-size: 16px; line-height: 34px; }
+  .bubble--l { left: 0; top: 0; width: 600px; }
+  .bubble--r { right: 0; top: 230px; width: 640px; }
+  .msg__photo { position: absolute; }
+  .msg__photo--1 { right: 60px; top: -20px; width: 300px; }
+  .msg__photo--2 { left: 30px; top: 330px; width: 300px; margin: 0; }
+  .msg__line { display: block; position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; overflow: visible; }
+}
+
+/* クラス */
+.panel__en { font-family: var(--font-script); font-size: 22px; letter-spacing: .02em; text-transform: none; }
+
+/* 特徴03の雲の写真 */
+.ph--cloud { background: none; overflow: visible; }
+.ph--cloud img { display: block; width: 100%; height: auto; }
+.card .ph--cloud img { border-radius: 0; }
+
+/* 講師：写真の枠も雲に寄せる */
+.ph--cloudempty { display: grid; place-items: center; aspect-ratio: 3 / 4; border: 2px dashed var(--line-hand); border-radius: 46% 54% 50% 50% / 44% 46% 54% 56%; background: #fff; color: var(--color-text-sub); font-size: 13px; line-height: 22px; text-align: center; }
+
+/* 講師の作品ギャラリー */
+.works { margin-top: var(--s40); }
+.works__script { color: var(--line-hand); font-family: var(--font-script); font-size: 28px; line-height: 1; transform: rotate(-4deg); transform-origin: left center; }
+.works .h3-sec { margin-top: var(--s4); }
+.works__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s16) var(--s12); margin-top: var(--s16); }
+.works__item figure { margin: 0; }
+.works__item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 4px solid #fff; border-radius: 24px 32px 28px 20px; }
+.works__item:nth-child(even) img { border-radius: 32px 20px 24px 30px; }
+.works__item figcaption { margin-top: var(--s8); color: var(--color-ink); font-size: 13px; line-height: 20px; }
+.works__item figcaption span { display: block; color: var(--color-text-sub); font-size: 12px; }
+.works__note { margin-top: var(--s16); color: var(--color-text-sub); font-size: 12px; line-height: 20px; }
+@media (min-width: 1024px) {
+  .works__list { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s24) var(--s16); }
+  .works__item:nth-child(5n+2), .works__item:nth-child(5n+4) { transform: translateY(24px); }
+  .teacher .works { grid-column: 1 / -1; }
+}
+
+/* 教室の様子：雲の写真を線でつなぐ */
+.scene { position: relative; margin-top: var(--s24); }
+.scene__line { display: none; }
+.scene__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s8); }
+.scene__item img { display: block; width: 100%; height: auto; }
+.scene__item--1 { grid-column: 1 / -1; width: 80%; justify-self: center; }
+@media (min-width: 1024px) {
+  .scene { height: 760px; margin-top: var(--s40); }
+  .scene__line { display: block; position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; overflow: visible; }
+  .scene__list { display: block; }
+  .scene__item { position: absolute; z-index: 2; }
+  .scene__item--1 { left: 0; top: 40px; width: 360px; }
+  .scene__item--2 { left: 400px; top: 120px; width: 300px; }
+  .scene__item--3 { right: 0; top: 0; width: 340px; }
+  .scene__item--4 { right: 120px; top: 360px; width: 320px; }
+  .scene__item--5 { left: 160px; top: 420px; width: 330px; }
+}
+
+/* ボタン：影を薄く、角丸を少し控えめに */
+.cta { box-shadow: 0 3px 0 #134C7C; letter-spacing: .1em; }
+.teacher > .wrap + .wrap { position: relative; z-index: 2; }
+.works { padding-top: var(--s24); }
+@media (min-width: 1024px) { .works { margin-top: var(--s64); } }
+@media (min-width:1024px){ .works__note{margin-top:var(--s48);} .teacher__photo{width:300px;} }
+@media (min-width:1024px){ .scene{height:660px;} }
+@media (max-width: 1023px) {
+  .pfv__s1 { top: 236px; width: 84px; }
+  .pfv__s2 { top: 244px; width: 80px; }
+}
