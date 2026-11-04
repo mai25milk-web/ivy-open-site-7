@@ -144,3 +144,6 @@ body:not([data-theme]) #classes { position: relative; padding-top: var(--s96); b
 
 /* FVのキャッチは黒に */
 .afv__catch { color: #1E2328; }
+/* キャッチ：上の小さい行はサイトのアクセント（テラコッタ）、大きい行は墨色。青一色の「よくある配色」を避ける */
+.afv__catch .afv__pre { color: #C2541C; }
+.afv__catch .afv__main { color: #23272B; }
