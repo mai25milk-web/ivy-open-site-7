@@ -1,0 +1,125 @@
+/* ポップ版：空色の地・雲・手描きのイラスト。メイン＝青、アクセント＝オレンジ */
+:root {
+  --color-main: #1F6FB2;
+  --color-main-dark: #175A92;
+  --color-ink: #26384A;
+  --color-text-sub: #4A5E72;
+  --color-line: #C9E3F4;
+  --color-line-strong: #7FA9C8;
+  --color-deep: #1F5F99;
+  --color-deep-sub: #CFE6F7;
+  --color-photo-pending: #EEF6FC;
+  --color-accent: #C2541C;
+  --color-tbc-bg: #FFF4E8;
+  --color-kids: #C2541C;
+  --color-adult: #1F6FB2;
+  --theme: #1F6FB2;
+  --theme-pale: #E4F3FC;
+  --theme-soft: #F2F9FE;
+  --sky: #E4F3FC;
+  --sky-fv: #D4EDFB;
+  --orange: #F08A3C;
+  --font-head: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  --font-body: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  --font-en: "Quicksand", "Zen Maru Gothic", sans-serif;
+}
+body { background: #fff; font-weight: 500; }
+
+/* 見出し：青・丸ゴシック */
+h2, .h3-sec, .card h3, .tile h3 { color: var(--color-deep); font-weight: 700; }
+.label { color: var(--color-accent); font-weight: 700; font-size: 14px; letter-spacing: .12em; }
+.label::before { width: 16px; height: 16px; border-radius: 50%; background: var(--orange); }
+
+/* セクションの地：空色と白を交互に */
+#materials, #teacher, #gallery, #faq { background: var(--sky); }
+#classes, #features, #schedule, #trial, #apply { background: #fff; }
+.band { background: #fff; padding-top: var(--s96); padding-bottom: var(--s96); }
+.soft { padding-bottom: var(--s96); }
+.apply { padding-top: var(--s96); }
+#materials, #teacher, #gallery, #faq { padding-top: var(--s96); }
+.cedge { position: absolute; left: 0; top: -1px; width: 100%; height: 40px; pointer-events: none; z-index: 1; }
+.section > .wrap { position: relative; z-index: 2; }
+
+/* 手描きのイラストの飾り */
+.dc { position: absolute; z-index: 1; height: auto; pointer-events: none; }
+.dc.pc { display: none; }
+@media (min-width: 1024px) { .dc.pc { display: block; } .dc.sp { display: none; } }
+
+/* FV：参考どおり、中央の大きな雲の写真に、コピーが上から重なる。地は単色 */
+.header, .crumb-bar { background: var(--sky-fv); }
+.pfv { position: relative; overflow: hidden; padding: var(--s16) var(--page-x) var(--s56); background: var(--sky-fv); }
+.pfv__stage { position: relative; max-width: 1200px; margin-inline: auto; }
+.pfv__catch { position: relative; z-index: 3; text-align: center; }
+.pfv .hero__pre { display: block; color: var(--color-deep); font-family: var(--font-head); font-weight: 700; font-size: 22px; line-height: 32px; letter-spacing: .1em; }
+.pfv .hero__main { display: block; margin-top: var(--s8); }
+.pfv__bubble { display: inline-block; padding: var(--s8) var(--s32) var(--s12); border-radius: 48px; background: #fff; color: var(--color-deep); font-family: var(--font-head); font-weight: 700; font-size: 36px; line-height: 48px; letter-spacing: .08em; box-shadow: 0 0 0 4px #fff; }
+.pfv__tags { display: none; }
+.pfv__photo { position: relative; z-index: 2; width: 100%; max-width: 360px; margin: calc(var(--s24) * -1) auto 0; }
+.pfv__photo img { display: block; width: 100%; height: auto; }
+.pfv__text { position: relative; z-index: 3; margin-top: var(--s16); text-align: center; }
+.pfv h1 { color: var(--color-ink); font-weight: 700; font-size: 14px; line-height: 24px; }
+.pfv .hero__lead { margin-top: var(--s8); font-size: 15px; line-height: 28px; }
+.pfv .pre-cta { margin-top: var(--s16); color: var(--color-accent); font-weight: 700; font-size: 14px; line-height: 24px; }
+.pfv .cta { margin: var(--s8) auto 0; }
+@media (min-width: 1024px) {
+  .header .nav__list a { padding: var(--s8) var(--s16); border-radius: 999px; background: #fff; }
+  .pfv { padding: var(--s24) var(--s40) var(--s80); }
+  .pfv__stage { height: 640px; }
+  .pfv__catch { display: flex; align-items: center; justify-content: center; gap: var(--s16); }
+  .pfv .hero__pre { font-size: 36px; line-height: 48px; }
+  .pfv .hero__main { margin-top: 0; }
+  .pfv__bubble { padding: var(--s12) var(--s40) var(--s16); border-radius: 64px; font-size: 56px; line-height: 72px; }
+  .pfv__tags { display: block; position: absolute; inset: 0; z-index: 1; width: 100%; height: 640px; overflow: visible; }
+  .pfv__tags text { fill: var(--color-main); font-family: var(--font-body); font-weight: 700; font-size: 18px; letter-spacing: .04em; word-spacing: 8px; }
+  .pfv__photo { max-width: 800px; margin-top: calc(var(--s40) * -1); }
+  .pfv__text { margin-top: 0; }
+  .pfv h1 { font-size: 16px; }
+  .pfv .hero__lead { font-size: 16px; line-height: 32px; }
+  .pfv .pre-cta { margin-top: var(--s24); }
+  .pfv .cta { width: 360px; }
+}
+
+/* ボタン */
+.cta { background: var(--color-main); box-shadow: 0 4px 0 #134C7C; }
+.cta:hover { background: var(--color-main-dark); }
+
+/* クラス：雲の写真 */
+.panel__img.pop-cloud { aspect-ratio: auto; background: none; }
+.pop-cloud img { display: block; width: 100%; height: auto; }
+.panel__body { border-radius: 0 0 32px 32px; }
+.panel--kids  { --pale: #FFF1E6; }
+.panel--adult { --pale: var(--sky); }
+.choice--kids  { --hover: #FFF1E6; }
+.choice--adult { --hover: var(--sky); }
+
+/* カード類：白・太めの空色の線・丸い角 */
+.mat, .panel-white, .form, .mapbox { border: 2px solid var(--color-line); border-radius: 24px; }
+.mats__set--make .mat { background: #FFF1E6; }
+.mats--boxed { background: #fff; }
+.card .ph, .card img { border-radius: 32px; }
+.card__no { color: var(--color-accent); font-weight: 700; }
+.ph { background: #fff; }
+.ph--empty { background: #fff; border: 2px dashed var(--color-line-strong); }
+.table th { background: var(--sky); }
+.tag--solid, .tagc { background: var(--sky); color: var(--color-deep); }
+.req { background: var(--color-accent); }
+.timeline__dot, .career li::before { background: var(--orange); }
+.timeline__time { color: var(--color-deep); }
+.step__no, .steps__no { border-color: var(--color-main); color: var(--color-main); }
+.dayline { border: 2px solid var(--color-line); }
+.faq__q { color: var(--color-main); }
+.faq__a { color: var(--color-accent); }
+
+/* ループの写真：角を丸く */
+.loop { padding-block: var(--s24); background: #fff; }
+.loop__track li { border-radius: 32px; }
+.loop__track li:nth-child(3n+2) { border-radius: 50%; }
+
+/* ギャラリー（Instagramの写真） */
+.pop-ig { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s8); margin-top: var(--s24); }
+.pop-ig li { overflow: hidden; border: 4px solid #fff; border-radius: 24px; }
+.pop-ig img { display: block; width: 100%; height: auto; }
+@media (min-width: 768px) { .pop-ig { gap: var(--s24); margin-top: var(--s40); } .pop-ig li { border-width: 8px; border-radius: 40px; } }
+
+/* フッター */
+.footer { background: var(--color-deep); }
